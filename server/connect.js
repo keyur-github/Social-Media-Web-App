@@ -1,15 +1,15 @@
 import mysql from "mysql";
 export const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "password",
-    database: "social",
-    port: 3306
+  host: process.env.host,
+  user: process.env.user,
+  password: process.env.password,
+  database: process.env.database,
+  port: process.env.port,
 });
 
-db.connect(function(err) {
-    if (err) {
-      return console.error('error: ' + err.message);
-    }
-    console.log('Connected to the MySQL server.');
+db.connect(function (err) {
+  if (err) {
+    return console.error("error: " + err.message);
+  }
+  console.log("Connected to the MySQL server.");
 });
