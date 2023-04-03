@@ -1,6 +1,7 @@
 import express from "express";
 const app = express();
-require("dotenv").config();
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
@@ -9,8 +10,8 @@ import commentRoutes from "./routes/comments.js";
 import likeRoutes from "./routes/likes.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-// middlewares
 
+// middlewares
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());

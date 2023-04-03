@@ -1,4 +1,8 @@
 import mysql from "mysql";
+import * as dotenv from 'dotenv'
+dotenv.config();
+
+console.log(process.env.port);
 export const db = mysql.createConnection({
   host: process.env.host,
   user: process.env.user,
